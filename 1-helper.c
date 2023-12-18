@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <string.h>
 
 /**
  * tokenize_line - Tokenizes the commands
@@ -6,18 +7,20 @@
  * @tokens: Buffer to hold the tokens
  * Return: 1 if success 0, otherwise
  */
+char *strtok_r(char *str, const char *delim, char **saveptr);
+
 int tokenize_line(char *s, char *tokens[])
 {
 	int i, status;
-	char *token, *hold;
+	char *buffer, *hold;
 
 	buffer = strtok_r(s, " \t\n", &hold);
-	status = check_comment(&token);
+	status = check_comment(&buffer);
 
 	if (status == 1)
 		return (0);
 
-	for (i = 0; token && i < 2; i++)
+	for (i = 0; buffer && i < 2; i++)
 	{
 		tokens[i] = buffer;
 

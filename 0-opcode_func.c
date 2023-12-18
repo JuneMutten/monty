@@ -36,14 +36,15 @@ void pall_stk(stack_t **stack, unsigned int line_number  __attribute__((unused))
 	{
 		fprintf(stderr, "ERROR: empty stack\n");
 		return;
-
-		printf("Stack values:\n");
-
-		while (tmp != NULL)
-		{
-			printf("%d\n", tmp->n);
-			tmp = tmp->next;
-		}
+	}
+	
+	printf("Stack values:\n");
+	
+	while (tmp != NULL)
+	{
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+	}
 }
 
 /**
@@ -72,7 +73,6 @@ void pint_stk(stack_t **stack, unsigned int line_number)
  * @stack: Pointer to the head of the stack
  * @line_number: Line number where the opcode is located
  */
-
 void pop_stk(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
@@ -104,7 +104,6 @@ void pop_stk(stack_t **stack, unsigned int line_number)
  * @stack: Pointer to the head to the stack
  * @line_number: Line number where opcode is located
  */
-
 void swap_stk(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp, *tmp2;

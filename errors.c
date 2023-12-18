@@ -24,7 +24,7 @@ void check_file_stream(FILE *fp, char *file_name)
 {
 	if (fp == NULL)
 	{
-		printf("ERROR: Could not open file");
+		printf("ERROR: Could not open file %s\n", file_name);
 		exit(EXIT_FAILURE);
 	}
 }

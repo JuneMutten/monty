@@ -1,5 +1,5 @@
 #include "monty.h"
-#include <stdio.h>
+#include <stddef.h>
 
 /**
  * main - Entry point of the function
@@ -7,10 +7,11 @@
  * @argv: Argument vector
  * Return: 0 on success
  */
+int value[3] = {0, 0, 0};
 
 int main(int argc, char *argv[])
 {
-	int value[3] = {0, 0, 0};
+	/* int value[3] = {0, 0, 0}; */
 	char *path, *line, *token_line[2];
 	FILE *fp;
 	void (*fptr)(stack_t **stack, unsigned int line_number);
